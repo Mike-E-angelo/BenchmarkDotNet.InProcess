@@ -13,15 +13,15 @@ Frequency=3613269 Hz, Resolution=276.7577 ns, Timer=TSC
 
 Job=InProcess  Toolchain=InProcessToolchain
 
-  Method |     Mean |     Error |    StdDev |  Gen 0 |  Gen 1 | Allocated |
--------- |---------:|----------:|----------:|-------:|-------:|----------:|
- ToArray | 21.82 us | 0.8184 us | 0.2126 us | 7.6294 | 0.8240 |  39.13 KB |
+  Method |     Mean |    Error |    StdDev |  Gen 0 |  Gen 1 | Allocated |
+-------- |---------:|---------:|----------:|-------:|-------:|----------:|
+ ToArray | 19.14 us | 1.093 us | 0.2839 us | 7.6294 | 0.8240 |  39.13 KB |
 ```
 
 ### Second Run (with `BenchmarkDotNet.Artifacts` folder)
 
 ```
-  Method |     Mean |    Error |    StdDev |  Gen 0 |  Gen 1 | Allocated |
--------- |---------:|---------:|----------:|-------:|-------:|----------:|
- ToArray | 19.42 us | 1.285 us | 0.3338 us | 7.6294 | 0.8240 |  39.13 KB |
+  Method |     Mean |     Error |    StdDev |  Gen 0 |  Gen 1 | Allocated |
+-------- |---------:|----------:|----------:|-------:|-------:|----------:|
+ ToArray | 19.30 us | 0.6725 us | 0.1747 us | 7.6294 | 0.8240 |  39.13 KB |
 ```

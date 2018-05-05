@@ -1,12 +1,13 @@
 ﻿using AutoFixture;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using BenchmarkDotNet.Diagnosers;
 
 namespace BenchmarkDotNet.InProcess
 {
@@ -30,7 +31,7 @@ namespace BenchmarkDotNet.InProcess
 		}
 	}
 
-	[Config(typeof(Config)), KeepBenchmarkFiles]
+	[Config(typeof(Config)), KeepBenchmarkFiles, Description]
 	public class Array
 	{
 		readonly Func<string, int> _select;
