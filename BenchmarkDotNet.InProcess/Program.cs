@@ -30,7 +30,7 @@ namespace BenchmarkDotNet.InProcess
 		}
 	}
 
-	[Config(typeof(Config))]
+	[Config(typeof(Config)), KeepBenchmarkFiles]
 	public class Array
 	{
 		readonly Func<string, int> _select;
