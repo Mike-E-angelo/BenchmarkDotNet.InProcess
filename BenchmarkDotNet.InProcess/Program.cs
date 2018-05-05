@@ -28,7 +28,6 @@ namespace BenchmarkDotNet.InProcess
 		{
 			_select = select.Compile();
 			_data   = data;
-			ToArray(); // <-- Considered good practice or no?
 		}
 
 		[Benchmark]
