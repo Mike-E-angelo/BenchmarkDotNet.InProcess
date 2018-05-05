@@ -13,9 +13,9 @@ Frequency=3613269 Hz, Resolution=276.7577 ns, Timer=TSC
 
 Job=InProcess  Toolchain=InProcessToolchain
 
-  Method |     Mean |     Error |    StdDev |
--------- |---------:|----------:|----------:|
- ToArray | 19.47 us | 0.3777 us | 0.3533 us |
+  Method |     Mean |    Error |    StdDev |
+-------- |---------:|---------:|----------:|
+ ToArray | 21.45 us | 1.153 us | 0.2995 us |
 ```
 
 ### Second Run (with `BenchmarkDotNet.Artifacts` folder)
@@ -23,5 +23,5 @@ Job=InProcess  Toolchain=InProcessToolchain
 ```
   Method |     Mean |     Error |    StdDev |
 -------- |---------:|----------:|----------:|
- ToArray | 21.52 us | 0.1409 us | 0.1249 us |
+ ToArray | 22.14 us | 0.9306 us | 0.2417 us |
 ```

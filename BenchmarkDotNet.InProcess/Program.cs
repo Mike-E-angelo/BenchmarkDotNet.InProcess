@@ -1,6 +1,7 @@
 ﻿using AutoFixture;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Attributes.Jobs;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using System;
 using System.Linq;
@@ -16,7 +17,18 @@ namespace BenchmarkDotNet.InProcess
 		}
 	}
 
-	[InProcess]
+	class Config : ManualConfig
+	{
+		public Config()
+		{
+			Add(Job.InProcess
+			       .WithLaunchCount(1)
+			       .WithWarmupCount(5)
+			       .WithTargetCount(5));
+		}
+	}
+
+	[Config(typeof(Config))]
 	public class Array
 	{
 		readonly Func<string, int> _select;
