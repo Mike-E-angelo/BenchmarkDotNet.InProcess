@@ -3,10 +3,10 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Toolchains.InProcess;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-using BenchmarkDotNet.Diagnosers;
 
 namespace BenchmarkDotNet.InProcess
 {
@@ -22,11 +22,7 @@ namespace BenchmarkDotNet.InProcess
 	{
 		public Config()
 		{
-			Add(Job.InProcess
-			       .WithLaunchCount(1)
-			       .WithWarmupCount(5)
-			       .WithTargetCount(5));
-			Add(MemoryDiagnoser.Default);
+			Add(Job.ShortRun.With(InProcessToolchain.Instance));
 		}
 	}
 
