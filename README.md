@@ -1,27 +1,37 @@
 ﻿# BenchmarkDotNet.InProcess
 
-### First Run (no `BenchmarkDotNet.Artifacts` folder)
+## .NET Core 2.0
 
 ```
 // * Summary *
 
-BenchmarkDotNet=v0.10.14, OS=Windows 10.0.14393.2189 (1607/AnniversaryUpdate/Redstone1)
-Intel Core i7-4820K CPU 3.70GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
-Frequency=3613269 Hz, Resolution=276.7577 ns, Timer=TSC
-.NET Core SDK=2.1.300-preview2-008533
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.431 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i7-4650U CPU 1.70GHz (Haswell), 1 CPU, 4 logical and 2 physical cores
+Frequency=2240905 Hz, Resolution=446.2483 ns, Timer=TSC
   [Host] : .NET Core 2.0.7 (CoreCLR 4.6.26328.01, CoreFX 4.6.26403.03), 64bit RyuJIT
 
-Job=InProcess  Toolchain=InProcessToolchain
+Toolchain=InProcessToolchain  LaunchCount=1  TargetCount=5
+WarmupCount=5
 
-  Method |     Mean |    Error |    StdDev |  Gen 0 |  Gen 1 | Allocated |
--------- |---------:|---------:|----------:|-------:|-------:|----------:|
- ToArray | 19.14 us | 1.093 us | 0.2839 us | 7.6294 | 0.8240 |  39.13 KB |
+  Method |     Mean |     Error |    StdDev |   Gen 0 | Allocated |
+-------- |---------:|----------:|----------:|--------:|----------:|
+ ToArray | 24.75 us | 0.9117 us | 0.2368 us | 18.8599 |  39.13 KB |
 ```
 
-### Second Run (with `BenchmarkDotNet.Artifacts` folder)
+## .NET Core 2.1
 
 ```
-  Method |     Mean |     Error |    StdDev |  Gen 0 |  Gen 1 | Allocated |
--------- |---------:|----------:|----------:|-------:|-------:|----------:|
- ToArray | 19.30 us | 0.6725 us | 0.1747 us | 7.6294 | 0.8240 |  39.13 KB |
+// * Summary *
+
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.431 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i7-4650U CPU 1.70GHz (Haswell), 1 CPU, 4 logical and 2 physical cores
+Frequency=2240905 Hz, Resolution=446.2483 ns, Timer=TSC
+  [Host] : .NET Core 2.0.7 (CoreCLR 4.6.26328.01, CoreFX 4.6.26403.03), 64bit RyuJIT
+
+Toolchain=InProcessToolchain  LaunchCount=1  TargetCount=5
+WarmupCount=5
+
+  Method |     Mean |     Error |    StdDev |   Gen 0 | Allocated |
+-------- |---------:|----------:|----------:|--------:|----------:|
+ ToArray | 21.19 us | 0.7593 us | 0.1972 us | 18.8599 |  39.13 KB |
 ```
